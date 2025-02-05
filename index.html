@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Memo</title>
+    <!-- Krav
+    Spillet skal ha et rutenett med kort (f.eks 4x4)
+    Kortene skal være synlige når de klikkes på, og skjules hvis de ikke matcher
+    Kortene skal inneholde bilder av (søte) dyr
+    Når alle parene er matchet skal det vises en melding om at spillet er over -->
+    <style>
+        .memoDiv {
+            display: grid;
+            grid-template-columns: repeat(4, auto);
+            grid-template-rows: repeat(4, auto);
+            padding: 50px;
+            margin: 20px;
+            justify-content: center;
+        }
+
+        .grid-item {
+            border: black, solid, 1px;
+            /* display:grid; */
+            width: 200px;
+            height: 200px;
+            gap: 5px;
+            margin: 20px;
+            background-color: aqua;
+
+        }
+
+        .img {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+
+<body>
+
+    <div id="memoDiv" class="memoDiv">
+
+        <div id="1" class="grid-item" onclick="setImage('1', 'img/cat.jpg')">1</div>
+        <div id="2" class="grid-item" onclick="setImage('2', 'img/bunny.jpg')">2</div>
+        <div id="3" class="grid-item" onclick="setImage('3', 'img/dog.jpg')">3</div>
+        <div id="4" class="grid-item" onclick="setImage('4', 'img/cat.jpg')">4</div>
+        <div id="5" class="grid-item" onclick="setImage('5', 'img/duck.jpg')">5</div>
+        <div id="6" class="grid-item" onclick="setImage('6', 'img/hamster.jpg')">6</div>
+        <div id="7" class="grid-item" onclick="setImage('7', 'img/penguin.jpg')">7</div>
+        <div id="8" class="grid-item" onclick="setImage('8', 'img/bunny.jpg')">8</div>
+        <div id="9" class="grid-item" onclick="setImage('9', 'img/dog.jpg')">9</div>
+        <div id="10" class="grid-item" onclick="setImage('10', 'img/fox.jpg')">10</div>
+        <div id="11" class="grid-item" onclick="setImage('11', 'img/duck.jpg')">11</div>
+        <div id="12" class="grid-item" onclick="setImage('12', 'img/penguin.jpg')">12</div>
+        <div id="13" class="grid-item" onclick="setImage('13', 'img/hamster.jpg')">13</div>
+        <div id="14" class="grid-item" onclick="setImage('14', 'img/seal.jpg')">14</div>
+        <div id="15" class="grid-item" onclick="setImage('15', 'img/fox.jpg')">15</div>
+        <div id="16" class="grid-item" onclick="setImage('16', 'img/seal.jpg')">16</div>
+    </div>
+    <script>
+        let firstFlippedCard = "";
+        let secondFlippedCard = "";
+        let clickCounter = 0;
+        let firstDivId = "";
+        let secondDivId = "";
+
+        function setImage(divId, srcString){
+            document.getElementById(divId).innerHTML =` <img class="img" src=${srcString}>`;
+        
+            clickCounter +=1 ;
+            if (clickCounter == 1)
+            {
+                setFlippedCard(srcString,divId)
+            }
+            else if (clickCounter == 2)
+            {
+                setFlippedCard2(srcString,divId)         
+                setTimeout(() => {
+                compareCards();
+            firstFlippedCard = "";
+            secondFlippedCard = "";
+            clickCounter = 0;
+            firstDivId = "";
+            secondDivId = "";
+        }, 1000);
+            }
+                
+        }
+        function setFlippedCard(srcString,flippedCardid1){
+         
+            firstFlippedCard = srcString;
+            firstDivId = flippedCardid1;
+        }
+        function setFlippedCard2(srcString,flippedCardid2){
+            secondFlippedCard = srcString;
+            secondDivId = flippedCardid2;
+        }
+        function resetCards(divId){
+        
+            document.getElementById(divId).innerHTML = divId;
+            //document.getElementById(divId).style.backgroundColor = "aqua";
+        }
+
+        function compareCards(){
+            if (firstFlippedCard !== secondFlippedCard)
+            {
+               
+                 resetCards(firstDivId);
+                 resetCards(secondDivId);    
+            }
+            
+        }
+    </script>
+
+</body>
+
+</html>
