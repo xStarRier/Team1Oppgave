@@ -1,4 +1,4 @@
-А<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -16,8 +16,6 @@
             padding: 0;
             box-sizing: border-box;
         }
-
-
         body {
             background-color: pink;
             display: flex;
@@ -26,8 +24,6 @@
             min-height: 100vh;
             overflow: hidden;
         }
-
-
         .memoDiv {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -65,7 +61,6 @@
 <body>
     <div id="memoDiv" class="memoDiv">
     </div>
-    
     <script>
         let firstFlippedCard = "";
         let secondFlippedCard = "";
@@ -131,22 +126,22 @@
         function drawBoard() {
             document.getElementById(`memoDiv`).innerHTML = /*HTML*/
                 `
-        <div id="1" class="grid-item" onclick="setImage('1', 'img/cat.jpg')"></div>
-        <div id="2" class="grid-item" onclick="setImage('2', 'img/bunny.jpg')"></div>
-        <div id="3" class="grid-item" onclick="setImage('3', 'img/dog.jpg')"></div>
-        <div id="4" class="grid-item" onclick="setImage('4', 'img/cat.jpg')"></div>
-        <div id="5" class="grid-item" onclick="setImage('5', 'img/duck.jpg')"></div>
-        <div id="6" class="grid-item" onclick="setImage('6', 'img/hamster.jpg')"></div>
-        <div id="7" class="grid-item" onclick="setImage('7', 'img/penguin.jpg')"></div>
-        <div id="8" class="grid-item" onclick="setImage('8', 'img/bunny.jpg')"></div>
-        <div id="9" class="grid-item" onclick="setImage('9', 'img/dog.jpg')"></div>
-        <div id="10" class="grid-item" onclick="setImage('10', 'img/fox.jpg')"></div>
-        <div id="11" class="grid-item" onclick="setImage('11', 'img/duck.jpg')"></div>
-        <div id="12" class="grid-item" onclick="setImage('12', 'img/penguin.jpg')"></div>
-        <div id="13" class="grid-item" onclick="setImage('13', 'img/hamster.jpg')"></div>
-        <div id="14" class="grid-item" onclick="setImage('14', 'img/seal.jpg')"></div>
-        <div id="15" class="grid-item" onclick="setImage('15', 'img/fox.jpg')"></div>
-        <div id="16" class="grid-item" onclick="setImage('16', 'img/seal.jpg')"></div>
+        <div id="1" class="grid-item" onclick="handleClick('1', 'img/cat.jpg')"></div>
+        <div id="2" class="grid-item" onclick="handleClick('2', 'img/bunny.jpg')"></div>
+        <div id="3" class="grid-item" onclick="handleClick('3', 'img/dog.jpg')"></div>
+        <div id="4" class="grid-item" onclick="handleClick('4', 'img/cat.jpg')"></div>
+        <div id="5" class="grid-item" onclick="handleClick('5', 'img/duck.jpg')"></div>
+        <div id="6" class="grid-item" onclick="handleClick('6', 'img/hamster.jpg')"></div>
+        <div id="7" class="grid-item" onclick="handleClick('7', 'img/penguin.jpg')"></div>
+        <div id="8" class="grid-item" onclick="handleClick('8', 'img/bunny.jpg')"></div>
+        <div id="9" class="grid-item" onclick="handleClick('9', 'img/dog.jpg')"></div>
+        <div id="10" class="grid-item" onclick="handleClick('10', 'img/fox.jpg')"></div>
+        <div id="11" class="grid-item" onclick="handleClick('11', 'img/duck.jpg')"></div>
+        <div id="12" class="grid-item" onclick="handleClick('12', 'img/penguin.jpg')"></div>
+        <div id="13" class="grid-item" onclick="handleClick('13', 'img/hamster.jpg')"></div>
+        <div id="14" class="grid-item" onclick="handleClick('14', 'img/seal.jpg')"></div>
+        <div id="15" class="grid-item" onclick="handleClick('15', 'img/fox.jpg')"></div>
+        <div id="16" class="grid-item" onclick="handleClick('16', 'img/seal.jpg')"></div>
             `;
         }
     </script>
