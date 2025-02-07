@@ -115,6 +115,7 @@
             else {
                 points++;
                 if (points == 8) {
+                    points = 0;
                     document.getElementById(`memoDiv`).innerHTML = ` 
                     You won!
                     <button onclick ="drawBoard()">Play again</button>`
